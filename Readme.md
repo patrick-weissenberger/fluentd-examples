@@ -8,7 +8,7 @@ The following configurations are mostly Docker related and can be ignored if you
 
 ### Ports
 
-The ports that will be opened in (docker-compose.yaml)[./docker-compose.yaml] and what data will be received on them.
+The ports that will be opened in [docker-compose.yaml](./docker-compose.yaml) and what data will be received on them.
 
 | Port | Protocol | Data received |
 | :-- | :-- | :-- |
@@ -26,11 +26,11 @@ The volumes and their uses.
 
 ### Commands
 
-The default (Fluentd Docker Image)[https://hub.docker.com/_/fluentd] comes bundled with a default configuration file called <i>fluent.conf</i>. If you search the web for help configuring Fluentd, you will find the community standard is to access the <i>fluentd.conf</i> file.
+The default [Fluentd Docker Image](https://hub.docker.com/_/fluentd) comes bundled with a default configuration file called <i>fluent.conf</i>. If you search the web for help configuring Fluentd, you will find the community standard is to access the <i>fluentd.conf</i> file.
 
 | Command | Purpose |
 | :-- | :-- |
-| fluentd -c /fluentd/etc/fluentd.conf | Tell Fluentd to use this configuration file ((More information)[/fluentd/etc/fluentd.conf]) |
+| fluentd -c /fluentd/etc/fluentd.conf | Tell Fluentd to use this configuration file ([More information](/fluentd/etc/fluentd.conf)) |
 
 ## Fluentd
 
