@@ -34,7 +34,7 @@ The default [Fluentd Docker Image](https://hub.docker.com/_/fluentd) comes bundl
 
 ## Fluentd
 
-The example streams are also documented in the (fluentd.conf)[./config/fluentd.conf] file itself.
+The example streams are also documented in the [fluentd.conf](./config/fluentd.conf) file itself.
 
 ## Examples
 
