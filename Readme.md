@@ -60,21 +60,19 @@ The test command assumes that you are running Fluentd on your local machine or e
 | :-- | :-- |
 | We receive a custom syslog format over TCP/ UDP and need to modify it | Convert the event stream to multiple data types and store them in persistent files with the appropriate extension |
 
-<b>Test data and command</b>
+Copy the contents of this [configuration file](./config/examples/example-01.conf) to run the tests.
+
+<b>Test commands</b>
 
 ```bash
 # Testing via TCP
 
-for i in {1..5}; do echo "<189>date=2025-01-19 time=12:34:56 devname=FGT1 devid=FGT60E3U18012345 logid=0000000013 type=traffic subtype=forward level=notice vd=root srcip=192.168.1.100 srcport=12345 srcintf="port1" dstip=10.0.0.1 dstport=80 dstintf="port2" sessionid=123456789 proto=6 action=accept policyid=5 appid=0 app="Web Browsing" user="N/A" group="N/A" duration=5 sentbyte=1500 rcvdbyte=2000 sentpkt=3 rcvdpkt=3 tranip=0.0.0.0 tranport=0 service="HTTP"" | nc 127.0.0.1 5100; done
+for i in {1..5}; do echo "<189>date=2022-11-08 time=12:24:06 devname=FGT1 devid=FGT60E3U18012345 logid=0000000013 type=traffic subtype=forward level=notice vd=root srcip=192.168.1.100 srcport=12345 srcintf="port1" dstip=10.0.0.1 dstport=80 dstintf="port2" sessionid=123456789 proto=6 action=accept policyid=5 appid=0 app="Web Browsing" user="N/A" group="N/A" duration=5 sentbyte=1500 rcvdbyte=2000 sentpkt=3 rcvdpkt=3 tranip=0.0.0.0 tranport=0 service="HTTP"" | nc 127.0.0.1 5100; done
 
 # Testing via UDP
 
-for i in {1..5}; do echo "<189>date=2025-01-19 time=12:34:56 devname=FGT1 devid=FGT60E3U18012345 logid=0000000013 type=traffic subtype=forward level=notice vd=root srcip=192.168.1.100 srcport=12345 srcintf="port1" dstip=10.0.0.1 dstport=80 dstintf="port2" sessionid=123456789 proto=6 action=accept policyid=5 appid=0 app="Web Browsing" user="N/A" group="N/A" duration=5 sentbyte=1500 rcvdbyte=2000 sentpkt=3 rcvdpkt=3 tranip=0.0.0.0 tranport=0 service="HTTP"" | nc -u -w1 127.0.0.1 5100; done
+for i in {1..5}; do echo "<189>date=2022-11-08 time=12:24:06 devname=FGT1 devid=FGT60E3U18012345 logid=0000000013 type=traffic subtype=forward level=notice vd=root srcip=192.168.1.100 srcport=12345 srcintf="port1" dstip=10.0.0.1 dstport=80 dstintf="port2" sessionid=123456789 proto=6 action=accept policyid=5 appid=0 app="Web Browsing" user="N/A" group="N/A" duration=5 sentbyte=1500 rcvdbyte=2000 sentpkt=3 rcvdpkt=3 tranip=0.0.0.0 tranport=0 service="HTTP"" | nc -u -w1 127.0.0.1 5100; done
 ```
-
-[Complete configuration](./config/examples/example-01.conf)
-
-<b>Complete configuration (no comments)</b>
 
 ### Example 02:
 
@@ -84,16 +82,18 @@ for i in {1..5}; do echo "<189>date=2025-01-19 time=12:34:56 devname=FGT1 devid=
 | :-- | :-- |
 | We receive a known syslog format and need to remove security related information. | Have secure event streams that can be stored in persistent files with the appropriate extension |
 
-<b>Test data and command</b>
+Copy the contents of this [configuration file](./config/examples/example-02.conf) to run the tests.
+
+<b>Test commands</b>
 
 ```bash
+# RFC-3164 Syslog
+
 # Testing via TCP
 
-for i in {1..5}; do echo "<34>Oct 11 00:14:05 mymachine su: 'su root' failed for lonvick on /dev/pts/8" | nc 127.0.0.1 5100; done
+for i in {1..5}; do echo "<34>Oct 11 00:15:30 mymachine su: 'su root' failed for lonvick on /dev/pts/8" | nc 127.0.0.1 5110; done
 
 # Testing via UDP
 
-for i in {1..5}; do echo "<34>Oct 11 00:14:05 mymachine su: 'su root' failed for lonvick on /dev/pts/8" | nc -u -w1 127.0.0.1 5100; done
+for i in {1..5}; do echo "<34>Oct 11 00:15:30 mymachine su: 'su root' failed for lonvick on /dev/pts/8" | nc -u -w1 127.0.0.1 5110; done
 ```
-
-[Complete configuration](./config/examples/example-02.conf)
