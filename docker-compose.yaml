@@ -1,0 +1,14 @@
+services:
+  fluentd:
+    image: fluentd:v1.18.0-1.0
+    container_name: fluentd-example
+    ports:
+      - "5100:5100/tcp"
+      - "5100:5100/udp"
+      - "5110:5110/tcp"
+      - "5110:5110/udp"
+    volumes:
+      - ./config/fluentd.conf:/fluentd/etc/fluentd.conf:ro
+      - ./logs/:/fluentd/log/
+    command: ["fluentd", "-c", "/fluentd/etc/fluentd.conf"]
+    restart: unless-stopped
