@@ -42,11 +42,11 @@ An overview of examples and their implementation status.
 
 | Example | Description | Status |
 | :-- | :-- | :-- |
-| (01)[#example-01] | Convert Fortigate's proprietary syslog data to JSON and CSV formats | Finished |
-| (02)[#example-02] | Convert RFC-compliant syslog to various data formats | Finished |
-| (03)[] | Modify and transform incoming log data to meet various privacy requirements | In progress |
-| (04)[] | Receive data over HTTP, transform it, and send the transformed data to an S3 bucket | Open |
-| (05)[] | Sending Fluentd metrics to different outputs (HTTP/ Forward) | Open |
+| 01 | Convert Fortigate's proprietary syslog data to JSON and CSV formats | Finished |
+| 02 | Convert RFC-compliant syslog to various data formats | Finished |
+| 03 | Modify and transform incoming log data to meet various privacy requirements | In progress |
+| 04 | Receive data over HTTP, transform it, and send the transformed data to an S3 bucket | Open |
+| 05 | Sending Fluentd metrics to different outputs (HTTP/ Forward) | Open |
 
 <b>Important</b>
 </br></br>
