@@ -30,7 +30,7 @@ The default [Fluentd Docker Image](https://hub.docker.com/_/fluentd) comes bundl
 
 | Command | Purpose |
 | :-- | :-- |
-| fluentd -c /fluentd/etc/fluentd.conf | Tell Fluentd to use this configuration file ([More information](/fluentd/etc/fluentd.conf)) |
+| fluentd -c /fluentd/etc/fluentd.conf | Tell Fluentd to use this configuration file |
 
 ## Fluentd
 
