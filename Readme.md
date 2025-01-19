@@ -72,6 +72,10 @@ for i in {1..5}; do echo "<189>date=2025-01-19 time=12:34:56 devname=FGT1 devid=
 for i in {1..5}; do echo "<189>date=2025-01-19 time=12:34:56 devname=FGT1 devid=FGT60E3U18012345 logid=0000000013 type=traffic subtype=forward level=notice vd=root srcip=192.168.1.100 srcport=12345 srcintf="port1" dstip=10.0.0.1 dstport=80 dstintf="port2" sessionid=123456789 proto=6 action=accept policyid=5 appid=0 app="Web Browsing" user="N/A" group="N/A" duration=5 sentbyte=1500 rcvdbyte=2000 sentpkt=3 rcvdpkt=3 tranip=0.0.0.0 tranport=0 service="HTTP"" | nc -u -w1 127.0.0.1 5100; done
 ```
 
+[Complete configuration](./config/examples/example-01.conf)
+
+<b>Complete configuration (no comments)</b>
+
 ### Example 02:
 
 <b>Convert RFC-compliant syslog to various data formats</b>
@@ -91,3 +95,5 @@ for i in {1..5}; do echo "<34>Oct 11 00:14:05 mymachine su: 'su root' failed for
 
 for i in {1..5}; do echo "<34>Oct 11 00:14:05 mymachine su: 'su root' failed for lonvick on /dev/pts/8" | nc -u -w1 127.0.0.1 5100; done
 ```
+
+[Complete configuration](./config/examples/example-02.conf)
