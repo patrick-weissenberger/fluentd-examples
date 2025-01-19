@@ -11,7 +11,7 @@ The following configurations are mostly Docker related and can be ignored if you
 The ports that will be opened in (docker-compose.yaml)[./docker-compose.yaml] and what data will be received on them.
 
 | Port | Protocol | Data received |
-| .-- | .-- | .-- |
+| :-- | :-- | :-- |
 | 5100 | TCP/ UDP | Raw |
 | 5110 | TCP/ UDP | Syslog |
 
@@ -20,7 +20,7 @@ The ports that will be opened in (docker-compose.yaml)[./docker-compose.yaml] an
 The volumes and their uses.
 
 | Local path | Container path | Usecase |
-| .-- | .-- | .-- |
+| :-- | :-- | :-- |
 | ./config/fluentd.conf | /fluentd/etc/fluentd.conf:ro | Fluentd configuration |
 | ./logs/ | /fluentd/log/ | Persisiting generated logs |
 
@@ -29,7 +29,7 @@ The volumes and their uses.
 The default (Fluentd Docker Image)[https://hub.docker.com/_/fluentd] comes bundled with a default configuration file called <i>fluent.conf</i>. If you search the web for help configuring Fluentd, you will find the community standard is to access the <i>fluentd.conf</i> file.
 
 | Command | Purpose |
-| .-- | .-- |
+| :-- | :-- |
 | fluentd -c /fluentd/etc/fluentd.conf | Tell Fluentd to use this configuration file ((More information)[/fluentd/etc/fluentd.conf]) |
 
 ## Fluentd
